@@ -1,6 +1,6 @@
 # Stick of Celery Webcomics
 
-![image][h]
+![](https://github.com/soup-bowl/comics/assets/11209477/b6e7b8b8-0452-4256-b8e4-8ea8ed5ff8d7)
 
 [![License CC BY-SA](https://img.shields.io/github/license/soup-bowl/comics)](http://creativecommons.org/licenses/by-sa/4.0/)
 ![Website](https://img.shields.io/website?down_message=offline&up_message=online&url=https%3A%2F%2Fwebcomics.soupbowl.blog)
