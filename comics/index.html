@@ -1,0 +1,45 @@
+---
+title: Comics
+layout: default
+pagination:
+  enabled: true
+  collection: comics
+---
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+	<header class="post-header">
+		<h1 class="post-title">{{ post.title }}</h1>
+	</header>
+
+	<p class="post-meta aligncentre">
+		{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+		<span class="date">{{ post.date | date: date_format }}</span>
+		<span class="sauce"><a href="{{ post.original }}">Original</a></span>
+	</p>
+
+	<!-- Pagination links -->
+	<div class="pagination">
+		{% if paginator.previous_page %}
+			<a href="{{ paginator.first_page_path }}" class="next">First</a>
+			<a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+		{% else %}
+			<span class="previous">First</span>
+			<span class="previous">Previous</span>
+		{% endif %}
+		<span class="page_number ">
+			Page {{ paginator.page }} of {{ paginator.total_pages }}
+		</span>
+		{% if paginator.next_page %}
+			<a href="{{ paginator.next_page_path }}" class="next">Next</a> 
+			<a href="{{ paginator.last_page_path }}" class="next">Latest</a>
+		{% else %}
+			<span class="next ">Next</span>
+			<span class="next ">Latest</span>
+		{% endif %}
+	</div>
+
+	<div class="content aligncentre">
+		{{ post.excerpt }}
+	</div>
+{% endfor %}

@@ -2,8 +2,8 @@
 
 // Define defaults for each variable.
 
-$base-font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !default;
-$base-font-size:   21px !default;
+$base-font-family: "Caveat", sans-serif !default;
+$base-font-size:   22px !default;
 $base-font-weight: 200 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
@@ -11,16 +11,13 @@ $header-font-family: 'Permanent Marker', cursive, sans-serif;
 
 $spacing-unit:     30px !default;
 
-$text-color:            #fff !default;
-$background-color:      #29132e !default;
-$background-head-color: #321450 !default;
-$brand-color:           #de004e !default;
+$text-color:            #373E48 !default;
+$background-color:      #EEEEEE !default;
+$background-head-color: #373E48 !default;
+$background-menu-color:  darken($background-head-color, 25%) !default;
+$brand-color:           #669901 !default;
 
-$alternate-color: #baf9ff !default;
-$alternate-color-dark: #0f93bf !default;
-$alternate-color-darker: #003b4e !default;
-
-$grey-color:       #f887ff !default;
+$grey-color:       #9d9d9d !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
 
@@ -72,10 +69,6 @@ h1, h2, h3, h4 {
 	}
 }
 
-h1:not(.post-featured-title), .header-pop {
-	filter: drop-shadow(4px 4px 0px $alternate-color-dark);
-}
-
 /*strong {
 	font-family: $header-font-family;
 }*/
@@ -93,8 +86,6 @@ pre, code,
 }
 
 .site-header {
-	filter: drop-shadow(0 2px 5px #000);
-
 	.site-title {
 		font-family: $header-font-family;
 		font-size: $base-font-size;
@@ -112,49 +103,19 @@ pre, code,
 		letter-spacing: -1px;
 		margin-left: 1rem;
 		margin-bottom: 0;
-		color: $alternate-color;
 		font-size: $base-font-size;
-	}
-
-	.site-nav {
-		font-size: $base-font-size;
-		font-weight: 500;
-		border: none;
-
-		.page-link {
-			color: $alternate-color;
-		}
-
-		.menu-icon > svg {
-			fill: $alternate-color;
-		}
-
-		@include media-query($on-palm) {
-			text-align: left;
-
-			.page-link {
-				font-size: $base-font-size * 1.5;
-				padding: 10px;
-			}
-		}
-	}
-
-	@media screen and (max-width: 700px) {
-		.site-subtitle {
-			display: none;
-		}
 	}
 }
 
 .page-content {
 	padding: 0;
-	background: url("memphis.svg") repeat;
 
 	.article-image {
 		text-align: center;
 
 		img {
-			max-width: 600px;
+			width:100%;
+			max-width: 1200px;
 
 			@include media-query($on-palm) {
 				width: 100%;
@@ -165,10 +126,9 @@ pre, code,
 
 .site-footer {
 	font-family: $header-font-family;
-	filter: drop-shadow(0 2px 5px #000);
 
 	.copyright {
-		color: $text-color;
+		color: $grey-color;
 		font-weight: 700;
 	}
 
@@ -181,63 +141,8 @@ pre, code,
 		text-align: right;
 	}
 
-	.social-media-list {
-		text-align: center;
-
-		li {
-			display: inline;
-		}
-
-		a {
-			color: $grey-color;
-			display: inline-block;
-			height: 4.4rem;
-			width: 4.4rem;
-		}
-
-		a:hover {
-			color: $text-color;
-		}
-
-		.s-gitlab:hover {
-			color: #F96424;
-		}
-
-		.s-wordpress:hover {
-			color: #0085BA;
-		}
-
-		.s-google:hover {
-			color: #4285F4;
-		}
-
-		.s-lastfm:hover {
-			color: #BA0000;
-		}
-
-		.s-mastodon:hover {
-			color: #6364ff;
-		}
-
-		.s-twitter:hover {
-			color: #1D9BD0;
-		}
-
-		.s-insta:hover {
-			color: #F04B5D;
-		}
-
-		.s-osgrid:hover {
-			color: #FFCB00;
-		}
-	}
-
-	strong {
-		color: $text-color;
-	}
-
 	a {
-		color: $grey-color;
+		color: $background-color;
 	}
 
 	@include media-query($on-laptop) {
@@ -282,32 +187,6 @@ pre, code,
 	width: auto;
 }
 
-.home-banner {
-	background: url("https://soupbowl.dev/labs/miami/vice-miami.svg") no-repeat center center;
-	background-size: cover;
-	text-align: center;
-	margin-bottom: 15px;
-}
-
-.showy-banner {
-	font-family: $header-font-family;
-	font-size: 38px;
-	background-size: cover;
-	background-position: 50%;
-	margin-bottom: 15px;
-	padding-top: 120px;
-	background-color: #0f0000;
-
-	p {
-		padding: 10px;
-		background-color: rgba(0, 0, 0, 0.50);
-
-	a {
-		color: $text-color;
-	}
-  }
-}
-
 .aligncentre {
 	text-align: center;
 }
@@ -333,30 +212,11 @@ pre, code,
 }
 
 .pagination {
+	@include relative-font-size(1.5);
 	text-align: center;
+	margin: 10px 0 10px 0;
 
 	span.previous, span.next {
 		color: $grey-color;
-	}
-}
-
-.error {
-	text-align: center;
-
-	h1 {
-		font-size: ($base-font-size * 5);
-		font-family: monospace;
-	}
-}
-
-.banner {
-	background-color: #de004e;
-	filter: drop-shadow(6px 6px 0px #0f93bf);	
-	border-radius: 15px;
-	padding: 10px;
-
-	a {
-		color: white;
-		text-decoration: underline;
 	}
 }

@@ -1,47 +1,28 @@
-title: Soupbowl
-subtitle: Ramblings of a DevOps Nerd
+title: Stick of Celery Webcomics
 author: soup-bowl
 email: code@soupbowl.io
 description: >-
-  Personal blog for Casey - a back-end developer specialising in PHP, primarily for WordPress developments.
-  Primarily a source of niche setup guides, cool Raspberry Pi builds, and general ranting.
-baseurl: ""
-url: "https://soupbowl.blog"
-footnote: Hello from London.
-permalink: /:year/:month/:title
+  Stick of Celery and Soupbowl Comics
+url: "https://webcomics.soupbowl.blog"
+#permalink: "/comic/:year/:month/:day/:title"
 
-include: ['_redirects']
 exclude: ['.github', '.vscode', 'README.md', 'LICENSE', 'docker-compose.yml', 'Gemfile.lock', 'Gemfile']
 
 theme: minima
 minima:
   date_format: "%-d %B %Y"
-header_pages:
-  - blog/index.html
-  - guides.html
 
 sass:
   style: compressed
 
-disqus:
-  shortname: soup-bowl
-  show_policy: true
+collections:
+  comics:
+    output: false
 
-soupy:
-  css_version: 4
-  socials:
-    twitter:   https://twitter.com/TheAlmightyWord
-    mastodon:  https://mstdn.social/@soupbowl
-    instagram: https://instagram.com/thealmightyword
-    github:    https://github.com/soup-bowl
-    gitlab:    https://gitlab.com/soup-bowl
-    wordpress: https://profiles.wordpress.org/soupbowl
-    google:    https://g.dev/soupbowl
-    lastfm:    https://last.fm/user/soup-bowl
-    osgrid:    hop://hg.osgrid.org:80/Oxanhenge/195/25/25
-
-paginate: 5
-paginate_path: "/blog/page/:num/"
+pagination:
+  enabled: true
+  per_page: 1
+  permalink: "/:num/"
 
 defaults:
   - scope:
@@ -51,4 +32,3 @@ defaults:
 
 plugins:
   - jekyll-feed
-  - jemoji

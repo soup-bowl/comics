@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="/favicon.ico">
+		<meta name="theme-color" content="#0f93bf">
+		<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}{%- if site.soupy.css_version -%}?v={{ site.soupy.css_version }}{%- endif -%}"> 
+
+		{{ content }}
+	</head>
+
+	<body>
+
+		{%- include header.html -%}
+
+		<main class="page-content" aria-label="Content">
+			Redirecting...
+		</main>
+
+		{%- include footer.html -%}
+
+	</body>
+
+</html>
