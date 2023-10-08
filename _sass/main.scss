@@ -1,0 +1,80 @@
+$base-font-family: "Caveat", sans-serif !default;
+$base-font-size:   24px !default;
+$base-font-weight: 200 !default;
+$base-line-height: 1 !default;
+
+$text-color:       #373E48 !default;
+$background-color: #EEEEEE !default;
+$brand-color:      #669901 !default;
+
+$grey-color:       #9d9d9d !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+body {
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	font-weight: $base-font-weight;
+	line-height: $base-line-height;
+	color: $text-color;
+	background-color: $background-color;
+}
+
+a, a:visited {
+	color: $brand-color;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.aligncentre {
+	text-align: center;
+}
+
+.site-header {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+
+	a {
+		color: $text-color;
+	}
+
+	a:visited {
+		color: $text-color;
+	}
+}
+
+.site-footer {
+	text-align: center;
+
+	a {
+		color: $grey-color;
+	}
+
+	.copyright {
+		color: $grey-color-dark;
+	}
+}
+
+.post-header {
+	p, h1 {
+		text-align: center;
+	}
+}
+
+.article-image {
+	img {
+		max-width: 1200px;
+		width: 100%;
+	}
+}
+
+.pagination {
+	text-align: center;
+}

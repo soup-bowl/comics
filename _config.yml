@@ -4,13 +4,8 @@ email: code@soupbowl.io
 description: >-
   Stick of Celery and Soupbowl Comics
 url: "https://webcomics.soupbowl.io"
-#permalink: "/comic/:year/:month/:day/:title"
 
 exclude: ['.github', '.vscode', 'README.md', 'LICENSE', 'docker-compose.yml', 'Gemfile.lock', 'Gemfile']
-
-theme: minima
-minima:
-  date_format: "%-d %B %Y"
 
 sass:
   style: compressed
