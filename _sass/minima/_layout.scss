@@ -2,11 +2,16 @@
  * Site header
  */
 .site-header {
-	background-color: $background-head-color;
 	min-height: $spacing-unit * 1.865;
 
 	// Positioning context for the mobile navigation icon
 	position: relative;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }
 
 .site-title {
@@ -14,11 +19,10 @@
 	line-height: $base-line-height * $base-font-size * 2.25;
 	letter-spacing: -1px;
 	margin-bottom: 0;
-	float: left;
 
 	&,
 	&:visited {
-		color: $grey-color-dark;
+		color: $text-color !important;
 	}
 }
 
@@ -26,7 +30,6 @@
  * Site footer
  */
 .site-footer {
-	background-color: $background-head-color;
 	padding: $spacing-unit 0;
 }
 
@@ -118,7 +121,7 @@
 }
 
 .post-meta {
-	font-size: $small-font-size;
+	@include relative-font-size(1.25);
 	color: $grey-color-dark;
 }
 
@@ -137,7 +140,7 @@
 }
 
 .post-title {
-	@include relative-font-size(2.625);
+	@include relative-font-size(2);
 	letter-spacing: -1px;
 	line-height: 1;
 

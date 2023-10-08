@@ -128,7 +128,7 @@ pre, code,
 	font-family: $header-font-family;
 
 	.copyright {
-		color: $grey-color;
+		color: $grey-color-dark;
 		font-weight: 700;
 	}
 
@@ -142,7 +142,7 @@ pre, code,
 	}
 
 	a {
-		color: $background-color;
+		color: $grey-color;
 	}
 
 	@include media-query($on-laptop) {
