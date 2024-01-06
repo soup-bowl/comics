@@ -1,4 +1,4 @@
-name: Build and deploy Jekyll site to GitHub Pages
+name: Build and deploy Jekyll site
 
 on:
   push:
@@ -15,14 +15,14 @@ on:
       - 'docker-compose.yml'
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   github-pages:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      deployments: write
+
     steps:
       - uses: actions/checkout@v3
 
@@ -32,11 +32,12 @@ jobs:
           -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
           jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
 
-      - name: 🚀 Pre-Deploy Site
-        uses: actions/upload-pages-artifact@v1
+      - name: 🚛 Publish Site
+        uses: cloudflare/pages-action@v1.3.0
         with:
-          path: './_site'
-
-      - name: 🚀 Deploy Site
-        id: deployment
-        uses: actions/deploy-pages@v1
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectName: webcomics
+          directory: _site
+          wranglerVersion: '3'
