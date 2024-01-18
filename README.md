@@ -11,6 +11,9 @@ Webcomic site with historic Soupbowl, Stick of Celery & Spiritshadowx webcomics.
 
 **This is a personal site - Pull Requests will not be accepted.** This site is currently hosted using **[GitHub Pages][gh]**.
 
+> [!IMPORTANT]  
+> This has been deprecated and [merged into my main blog](https://blog.soupbowl.io/comics/).
+
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/soup-bowl/comics)
 
 ## 🧪 Compiling with Jekyll
